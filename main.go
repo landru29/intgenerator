@@ -91,7 +91,7 @@ func generateInterface(structName string, functions []string) string {
 	result := []string{fmt.Sprintf("type %sInterface interface {", structName)}
 	for _, function := range functions {
 		if capitalizeRe.MatchString(function) {
-			result = append(result, fmt.Sprintf("    func %s", function))
+			result = append(result, fmt.Sprintf("    %s", function))
 		}
 	}
 	result = append(result, "}")
